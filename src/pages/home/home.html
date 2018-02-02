@@ -1,0 +1,68 @@
+<ion-header >
+  <ion-navbar >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >الرئيسية</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    
+    <!-- <img src="../../assets/imgs/1.jpg" height="150" width="590"> -->
+    <ion-item class="material">
+            <!-- <div class="row">
+                <div class="col-md-6"> -->
+                  <ul class="list-inline">
+                      <li><a href=""> <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon></a></li>
+                      <li><a href=""><ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon></a></li>
+                      <li><a href=""><ion-icon ios="logo-linkedin" md="logo-linkedin"></ion-icon></a></li>
+                      <li><a href=""><ion-icon ios="logo-googleplus" md="logo-googleplus"></ion-icon></a></li>
+                      
+                  </ul>
+                <!-- </div>
+        </div> -->
+    </ion-item>
+    
+  <ion-card *ngFor="let needer of Needers">
+      <ion-row>
+          <div class="styleType" style="padding-top: 10px;
+          padding-bottom: 10px"><span>نوع الحالة : 
+          {{needer.type}}</span>
+        </div>
+        <!-- <ion-avatar item-start>
+          <img src={{needer.image}}>
+        </ion-avatar> -->
+      </ion-row>
+      <ion-slides pager="true">
+        <ion-slide *ngFor="let image of needer.images" loop="true">
+          <img src={{image.image}}>
+        </ion-slide>
+    </ion-slides>
+      <ion-card-content>
+        <p>ابو حسين شبه ضرير يسكن هو وعائلته الكبيرة بأحدى التجاوزات ضمن محلة "438" شارع "25" خلف مدرسة العدالة للبنين دور السلام ضمن منطقة الحرية.قامت دورية بالتوجهه اليه وتوقيعه على تعهد خطي ينص على ترك المكان خلال مدة اقصاها اسبوع. أبو حسين ناشد بنشر حالته لكي تصل الى الجهات المعنية والنظر بحالته ومساعدته بابسط الحلول.</p>
+      </ion-card-content>
+    
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small>
+              <ion-icon ios="md-calendar" md="md-calendar" large></ion-icon>
+            <div><span class="styleType"> تأريخ :</span> {{needer.date}} </div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small>
+              <ion-icon ios="ios-navigate-outline" md="ios-navigate-outline" large></ion-icon>
+            <div><span class="styleType">المحافظة :</span>  {{needer.location}}  </div>
+          </button>
+        </ion-col>
+        <!-- <ion-col center text-center>
+          <ion-note>
+            11h ago
+          </ion-note>
+        </ion-col> -->
+      </ion-row>
+    
+    </ion-card>
+
+</ion-content>

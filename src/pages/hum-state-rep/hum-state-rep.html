@@ -1,0 +1,98 @@
+
+<ion-header >
+
+  <ion-navbar  >
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title  >التبليغ عن الحالات الإنسانية</ion-title>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+        <ion-label>نوع الحالة الإنسانية</ion-label>
+        <ion-select [(ngModel)]="gender" (change)="selectItem($event)">
+          <ion-option value="p">فقير</ion-option>
+          <ion-option value="n">نازح</ion-option>
+          <ion-option value="s">مريض</ion-option>
+          <ion-option value="k">كوارث</ion-option>
+        </ion-select>
+        
+      </ion-item>
+    
+    <!-- <ion-card class="list"> 
+        <ion-card-header>
+            نوع الحالة الإنسانية
+        </ion-card-header>
+        <ion-card-content>
+          <label class="container">
+              <input type="radio" checked="checked" name="radio">نازح
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">فقير
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">مريض
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">كوارث
+              <input type="radio" name="radio">
+              <span class="checkmark"></span>
+            </label>
+        </ion-card-content>
+      </ion-card> -->
+      
+  <ion-item>
+    <ion-label stacked style="font-size: 16px">اسمك الثلاثي</ion-label>
+    <ion-input type="text" [(ngModel)]="FullName" #ctl="ngModel"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label stacked style="font-size: 16px">موقع الحالة الإنسانية</ion-label>
+    <ion-input type="text" [(ngModel)]="Location" #ctl="ngModel"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label stacked style="font-size: 16px">أقرب نقطة دالة</ion-label>
+      <ion-input type="text" [(ngModel)]="Direction" #ctl="ngModel"></ion-input>
+    </ion-item>
+  <ion-item>
+    <ion-label stacked style="font-size: 16px">شرح عن الحالة الإنسانية</ion-label>
+    <ion-input type="text" [(ngModel)]="Details" #ctl="ngModel"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label stacked style="font-size: 16px">توثيق الحالة الإنسانية (بالصور)</ion-label>
+      <ion-input type="file">
+         
+      </ion-input>
+    </ion-item>
+    <ion-item>
+        <input accept="image/*" name="file" ng-value="fileToUpload"
+        value="{{fileToUpload}}" file-model="fileToUpload"
+        set-file-data="fileToUpload = value;" 
+        type="file" id="my_file" />
+        
+        <!-- <button ion-button outline>Primary Outline</button> -->
+      <!-- <image-upload url="https://httpbin.org/status/200"></image-upload> -->
+    </ion-item>
+    <!-- <button ion-button large>Large</button> -->
+    <!-- <button ion-button round full (click)="callPostData(FullName,Location,Direction,Details)">خزن</button> -->
+    <button ion-button round full>خزن</button>
+    <!-- <ion-label class="resp">{{resp}}</ion-label> -->
+
+
+
+    <ion-input type="text" (keyup)="onNameKeyUp($event)"></ion-input>
+  
+  <!-- <button ion-button (click)="getProfile()">Get</button>
+  <button ion-button (click)="postProfile()">Post</button> -->
+    <!-- <button ion-button icon-right>
+        خزن
+        <ion-icon name="home"></ion-icon>
+      </button> -->
+</ion-content>
