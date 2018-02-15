@@ -29,7 +29,7 @@ export class InitialPage {
     console.log('ionViewDidLoad InitialPage');
   }
   start(){
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
     // this.n.push('HumStateRepPage');
   }
 }
